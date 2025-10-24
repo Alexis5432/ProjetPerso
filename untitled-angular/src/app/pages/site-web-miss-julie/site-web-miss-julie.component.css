@@ -1,4 +1,4 @@
-/* Structure générale */
+/* Header et page d'acceuil */
 .header {
   position: fixed; 
   top: 0;          
@@ -15,7 +15,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo et marque */
+
 .header-left {
   display: flex;
   align-items: center;
@@ -87,6 +87,7 @@
   }
 }
 
+
 .hero {
   display: flex;
   align-items: center;
@@ -107,6 +108,7 @@
   padding-right: 100px;
  
 }
+
 
 .hero h1 {
   font-size: 3.5rem;
@@ -204,7 +206,6 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  background-color: #0d1117;
   border-radius: 10px;
   z-index: 1;
 }
@@ -212,19 +213,22 @@
 .decor.top-left {
   top: -25px;
   left: -25px;
+    background-color: #0d1117;
 }
 
 .decor.bottom-right {
   bottom: -25px;
-  right: 110px;
+  right: -25px;
   background-color: #8b1e25;
-  z-index: 1;
 }
 
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
     text-align: center;
+     padding-top: 120px; 
+    height: auto; 
+  
   }
 
   .hero-content {
@@ -234,9 +238,160 @@
   .buttons {
     justify-content: center;
   }
+  .decor { width: 70px; height: 70px; }
+  
 }
+
+@media (min-width: 1600px) {
+  .decor { width: 120px; height: 120px; right: -30px; bottom: -30px; }
+  
+}
+
  h1{
   font-family: "Arimo", sans-serif;
  
 }
+.image-wrap {
+  position: relative;
+  display: inline-block; 
+  width: 100%;
+  max-width: 500px; 
+}
 
+.image-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  z-index: 2;
+}
+/* Header et page d'acceuil */
+h2{
+  font-family:Arima Madurai, cursive;
+  text-align: center;
+  color: #8b1e25;
+  font-size: 2.8rem;
+}
+.paragraphe{
+  font-family:Arima Madurai, cursive;
+  text-align: center;
+  color: #4A5565;
+  font-size: 1.3rem;
+}
+/* Section principale */
+.products {
+  text-align: center;
+  padding: 100px 8%;
+  background-color: #fafafa;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.products h2 {
+  font-family: 'Arima Madurai', cursive;
+  font-size: 45px;
+  font-weight: 400;
+  color: #8b1e25;
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+
+.product-card {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  max-width: 280px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 18px;
+  text-align: center;
+}
+
+.product-info h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.product-info p {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 5px;
+}
+
+
+.price {
+  color: #8b1e25;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+
+.details-btn {
+  background-color: #1a1e2b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.details-btn:hover {
+  background-color: #2e3445;
+}
+
+.details-btn img {
+  width: 14px;
+  height: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .products {
+    padding: 60px 5%;
+  }
+
+  .product-grid {
+    gap: 25px;
+  }
+
+  .product-card {
+    max-width: 100%;
+  }
+}
