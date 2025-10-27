@@ -381,7 +381,6 @@ h2{
   height: 14px;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .products {
     padding: 60px 5%;
@@ -395,3 +394,15 @@ h2{
     max-width: 100%;
   }
 }
+
+/* Section principale */
+.histoire{
+  background-color: #EBEBEB;
+  text-align: center;
+  padding: 60px 8%;
+  
+}
+.imagemiss{
+  height: 390px;
+}
+
