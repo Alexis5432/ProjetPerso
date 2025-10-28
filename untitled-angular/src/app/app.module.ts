@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser'
 
 import { ComponentsModule } from './components/components.module'
 import { AppComponent } from './app.component'
+import { FormsModule } from '@angular/forms'
+import { CommonModule } from '@angular/common'
 
 const routes = [
   {
@@ -24,7 +26,7 @@ const routes = [
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot(routes), ComponentsModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes), ComponentsModule, FormsModule,CommonModule],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

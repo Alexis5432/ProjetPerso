@@ -159,11 +159,113 @@
     </div>
   </div>
 </section>
-<section class="histoire">
-  <div>
-  <img class="imagemiss" src="assets/imageprincipale.jpg" alt="">
+
+<section class="about">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="assets/imageprincipale.jpg" alt="Miss Julie au bord d'un lac">
+    </div>
+    <div class="about-text">
+      <h2>L'histoire de Miss Julie</h2>
+      <p>
+        Passionnée par la couture depuis mon enfance, j'ai toujours eu à cœur de créer des objets beaux et utiles. 
+        En 2023, j'ai décidé de combiner ma passion avec mes valeurs environnementales.
+      </p>
+      <p>
+        Miss Julie et ses créations est né de cette vision : offrir des sacs et sacoches uniques, confectionnés à partir 
+        de matériaux recyclés et récupérés. Chaque pièce raconte une histoire et contribue à un avenir plus durable.
+      </p>
+      <p>
+        Basée au Québec, elle s'engage à produire localement et à maintenir les plus hauts standards de qualité artisanale.
+      </p>
+    </div>
   </div>
+  </section>
+
+  <section class="info">
+  <div class="values">
+    <div class="value">
+      <div class="icon"><img src="assets/icon2572-b0um.svg" alt="Icône coeur"></div>
+      <h3>Fait avec amour</h3>
+      <p>Chaque création est confectionnée avec passion et attention aux détails.</p>
+    </div>
+
+    <div class="value">
+      <div class="icon"><img src="assets/icon2580-eh8e.svg" alt="Icône feuille"></div>
+      <h3>Éco-responsable</h3>
+      <p>Donne une seconde vie aux matériaux pour réduire son impact sur l’environnement.</p>
+    </div>
+
+    <div class="value">
+      <div class="icon"><img src="assets/icon2589-n22b.svg" alt="Icône personne"></div>
+      <h3>Entreprise québécoise</h3>
+      <p>Une petite entreprise québécoise qui valorise les relations humaines.</p>
+    </div>
+
+    <div class="value">
+      <div class="icon"><img src="assets/icon2600-xjon.svg" alt="Icône medaille"></div>
+      <h3>Qualité artisanale</h3>
+      <p>Des produits durables conçus pour résister à l’épreuve du temps.</p>
+    </div>
+  </div>
+  </section>
+
+  <section class="contact">
+  <h2>Contactez-moi</h2>
+  <p class="paragraphe">
+    Une question? Un projet sur mesure? Écrivez-moi, je serai ravie d’en discuter avec vous !
+  </p>
+  <br/>
+
+  <div class="contact-info">
+    <div class="info-box">
+      <div class="icon"><img src="assets/icon2617-88h9.svg" alt="Icône mail"></div>
+      <h3>Email</h3>
+      <p>julie.semal@gmail.com</p>
+    </div>
+
+    <div class="info-box">
+      <div class="icon"><img src="assets/icon2627-y7sa.svg" alt="Icône telephone"></div>
+      <h3>Téléphone</h3>
+      <p>(514) 462-2058</p>
+    </div>
+
+    <div class="info-box">
+      <div class="icon"><img src="assets/icon2636-0tz.svg" alt="Icône telephone"></div>
+      <h3>Localisation</h3>
+      <p>Québec, Canada</p>
+    </div>
+  </div>
+
+  <form (ngSubmit)="sendEmail()" #contactForm="ngForm" class="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Nom complet</label>
+        <input type="text" placeholder="Votre nom" name="from_name" [(ngModel)]="formData.from_name" required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="votre@email.com" name="from_email" [(ngModel)]="formData.from_email" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Sujet</label>
+      <input type="text" placeholder="Sujet de votre message" name="from_sujet" [(ngModel)]="formData.from_sujet" required>
+    </div>
+
+    <div class="form-group">
+      <label>Message</label>
+      <textarea rows="5" placeholder="Écrivez votre message ici..." name="message" [(ngModel)]="formData.message" required></textarea>
+    </div>
+
+    <button type="submit">
+      <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+    </button>
+  </form>
 </section>
+
+
 
 </body>
 </html>

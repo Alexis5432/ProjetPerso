@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common'
 import { ComponentsModule } from '../../components/components.module';
 
 import { SiteWebMissJulie } from './site-web-miss-julie.component'
+import { FormsModule } from '@angular/forms';
 
 const routes = [
   {
@@ -15,7 +16,7 @@ const routes = [
 
 @NgModule({
   declarations: [SiteWebMissJulie],
-  imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes), FormsModule],
   exports: [SiteWebMissJulie],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
