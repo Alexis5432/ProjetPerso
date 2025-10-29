@@ -237,32 +237,71 @@
     </div>
   </div>
 
-  <form (ngSubmit)="sendEmail()" #contactForm="ngForm" class="contact-form">
-    <div class="form-row">
-      <div class="form-group">
-        <label>Nom complet</label>
-        <input type="text" placeholder="Votre nom" name="from_name" [(ngModel)]="formData.from_name" required>
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" placeholder="votre@email.com" name="from_email" [(ngModel)]="formData.from_email" required>
+<form [formGroup]="formGroup" (ngSubmit)="sendEmail()" class="contact-form">
+  <div class="form-row">
+    <div class="form-group">
+      <label>Nom complet</label>
+      <input
+        type="text"
+        placeholder="Votre nom"
+        formControlName="from_name"
+        required
+      />
+      <div class="error" *ngIf="f.from_name.touched && f.from_name.invalid">
+        Ce champ est obligatoire.
       </div>
     </div>
 
     <div class="form-group">
-      <label>Sujet</label>
-      <input type="text" placeholder="Sujet de votre message" name="from_sujet" [(ngModel)]="formData.from_sujet" required>
+      <label>Email</label>
+      <input
+        type="email"
+        placeholder="votre@email.com"
+        formControlName="from_email"
+        required
+      />
+      <div class="error" *ngIf="f.from_email.touched && f.from_email.errors">
+        <span *ngIf="f.from_email.errors['required']">
+          Ce champ est obligatoire.
+        </span>
+        <span *ngIf="f.from_email.errors['email']">
+          Adresse courriel invalide.
+        </span>
+      </div>
     </div>
+  </div>
 
-    <div class="form-group">
-      <label>Message</label>
-      <textarea rows="5" placeholder="Écrivez votre message ici..." name="message" [(ngModel)]="formData.message" required></textarea>
+  <div class="form-group">
+    <label>Sujet</label>
+    <input
+      type="text"
+      placeholder="Sujet de votre message"
+      formControlName="from_sujet"
+      required
+    />
+    <div class="error" *ngIf="f.from_sujet.touched && f.from_sujet.invalid">
+      Ce champ est obligatoire.
     </div>
+  </div>
 
-    <button type="submit">
-      <i class="fa-solid fa-paper-plane"></i> Envoyer le message
-    </button>
-  </form>
+  <div class="form-group">
+    <label>Message</label>
+    <textarea
+      rows="5"
+      placeholder="Écrivez votre message ici..."
+      formControlName="message"
+      required
+    ></textarea>
+    <div class="error" *ngIf="f.message.touched && f.message.invalid">
+      Ce champ est obligatoire.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="formGroup.invalid">
+    <i class="fa-solid fa-paper-plane"></i> Envoyer le message
+  </button>
+</form>
+
 </section>
 
 

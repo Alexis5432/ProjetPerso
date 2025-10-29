@@ -630,3 +630,13 @@ input:focus, textarea:focus {
   }
 }
 
+.error {
+  color: #c62828;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid #c62828;
+}
+
