@@ -639,4 +639,62 @@
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Amélioration mobile globale */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch-friendly pour mobile */
+@media (max-width: 768px) {
+  button, 
+  a, 
+  .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input, 
+  textarea, 
+  select {
+    font-size: 16px !important; /* Évite le zoom sur iOS */
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Amélioration de la lisibilité sur mobile */
+@media (max-width: 600px) {
+  .thq-heading-1 {
+    font-size: 32px;
+  }
+  
+  .thq-heading-2 {
+    font-size: 24px;
+  }
+  
+  .thq-heading-3 {
+    font-size: 20px;
+  }
+  
+  .thq-body-large {
+    font-size: 16px;
+  }
+  
+  .thq-body-small {
+    font-size: 14px;
+  }
+}

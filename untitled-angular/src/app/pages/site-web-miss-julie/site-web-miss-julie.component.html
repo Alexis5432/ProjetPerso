@@ -20,19 +20,18 @@
   </div>
 
   <nav class="nav">
-    <a href="#">Accueil</a>
-    <a href="#">Produits</a>
-    <a href="#">À propos</a>
+    <a href="#Accueil">Accueil</a>
+    <a href="#produits">Produits</a>
+    <a href="#propos">À propos</a>
     <a href="#">Galerie photos</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <button class="contact-btn">
-    <img src="assets/union75-qij.svg" alt="Icône téléphone" class="icon" />Contact
-  </button>
+<div></div>
 </header>
 
 <body>
-  <section class="hero">
+  <section class="hero" id="Accueil">
   <div class="hero-content">
     <h1>
       Créations <br />
@@ -51,7 +50,7 @@
     </div>
 
     <div class="buttons">
-      <button class="btn primary">Contactez-nous</button>
+      <button class="btn primary" (click)="scrollToContact()">Contactez-nous</button>
       <button class="btn secondary">Galerie photos</button>
     </div>
   </div>
@@ -69,90 +68,21 @@
   <br />
   <p class="paragraphe">Chaque sac est une pièce unique, confectionnée avec soin à partir de <br /> matériaux recyclés. Faites un choix responsable sans compromis sur le style.</p>
 </div>
-<section class="products">
+<section class="products" id="produits">
   <div class="product-grid">
-    <div class="product-card">
-      <img src="assets/sac.jpg" alt="Sac fourre-tout Classic" />
+    <div 
+      class="product-card clickable" 
+      *ngFor="let product of products"
+      (click)="goToProduct(product.id)"
+    >
+      <img [src]="product.images[0]" [alt]="product.name" />
       <div class="product-info">
-        <h3>Sac fourre-tout Classic</h3>
-        <p>Grand sac parfait pour le quotidien, fabriqué à partir de tissus recyclés.</p>
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
         <div class="product-footer">
-          <span class="price">45$</span>
-          <button class="details-btn">
-            <img src="assets/union75-qij.svg" alt=""> Détails
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/sac.jpg" alt="Sac fourre-tout Classic" />
-      <div class="product-info">
-        <h3>Sac fourre-tout Classic</h3>
-        <p>Grand sac parfait pour le quotidien, fabriqué à partir de tissus recyclés.</p>
-        <div class="product-footer">
-          <span class="price">45$</span>
-          <button class="details-btn">
-            <img src="assets/union75-qij.svg" alt=""> Détails
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/sac.jpg" alt="Sac fourre-tout Classic" />
-      <div class="product-info">
-        <h3>Sac fourre-tout Classic</h3>
-        <p>Grand sac parfait pour le quotidien, fabriqué à partir de tissus recyclés.</p>
-        <div class="product-footer">
-          <span class="price">45$</span>
-          <button class="details-btn">
-            <img src="assets/union75-qij.svg" alt=""> Détails
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="products">
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="assets/sac.jpg" alt="Sac fourre-tout Classic" />
-      <div class="product-info">
-        <h3>Sac fourre-tout Classic</h3>
-        <p>Grand sac parfait pour le quotidien, fabriqué à partir de tissus recyclés.</p>
-        <div class="product-footer">
-          <span class="price">45$</span>
-          <button class="details-btn">
-            <img src="assets/union75-qij.svg" alt=""> Détails
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/sac.jpg" alt="Sac fourre-tout Classic" />
-      <div class="product-info">
-        <h3>Sac fourre-tout Classic</h3>
-        <p>Grand sac parfait pour le quotidien, fabriqué à partir de tissus recyclés.</p>
-        <div class="product-footer">
-          <span class="price">45$</span>
-          <button class="details-btn">
-            <img src="assets/union75-qij.svg" alt=""> Détails
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/sac.jpg" alt="Sac fourre-tout Classic" />
-      <div class="product-info">
-        <h3>Sac fourre-tout Classic</h3>
-        <p>Grand sac parfait pour le quotidien, fabriqué à partir de tissus recyclés.</p>
-        <div class="product-footer">
-          <span class="price">45$</span>
-          <button class="details-btn">
-            <img src="assets/union75-qij.svg" alt=""> Détails
+          <span class="price">{{ product.price }}$</span>
+          <button class="details-btn" (click)="goToProduct(product.id); $event.stopPropagation()">
+             Détails
           </button>
         </div>
       </div>
@@ -160,7 +90,7 @@
   </div>
 </section>
 
-<section class="about">
+<section class="about" id="propos">
   <div class="about-container">
     <div class="about-image">
       <img src="assets/imageprincipale.jpg" alt="Miss Julie au bord d'un lac">
@@ -210,7 +140,7 @@
   </div>
   </section>
 
-  <section class="contact">
+  <section class="contact" id="contact">
   <h2>Contactez-moi</h2>
   <p class="paragraphe">
     Une question? Un projet sur mesure? Écrivez-moi, je serai ravie d’en discuter avec vous !
@@ -324,10 +254,10 @@ un avenir plus durable.
 <div class="footer-right">
 <h4>Navigation</h4>
 <ul>
-<li><a href="#">Accueil</a></li>
-<li><a href="#">Produits</a></li>
-<li><a href="#">À propos</a></li>
-<li><a href="#">Contact</a></li>
+<li><a href="#Accueil">Accueil</a></li>
+<li><a href="#produits">Produits</a></li>
+<li><a href="#propos">À propos</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
 </div>
 <div class="copyright">

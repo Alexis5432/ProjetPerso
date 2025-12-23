@@ -1,0 +1,117 @@
+<header class="header">
+  <div class="header-left">
+    <img src="assets/rectangle13813-9fjo-200h.png" alt="Logo Miss Julie" class="logo" />
+    <div class="brand">
+      <h1>Miss Julie</h1>
+      <p>et ses créations</p>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a routerLink="/">Accueil</a>
+    <a routerLink="/">Produits</a>
+    <a routerLink="/">À propos</a>
+    <a routerLink="/">Galerie photos</a>
+  </nav>
+
+  <button class="contact-btn">
+    <img src="assets/union75-qij.svg" alt="Icône téléphone" class="icon" />Contact
+  </button>
+</header>
+
+<main class="product-detail-page" *ngIf="product">
+  <button class="back-btn" (click)="goBack()">
+    ← Retour aux produits
+  </button>
+
+  <div class="product-container">
+    <!-- Galerie d'images -->
+    <div class="gallery">
+      <div class="main-image">
+        <img [src]="product.images[selectedImageIndex]" [alt]="product.name" />
+      </div>
+      <div class="thumbnails">
+        <img 
+          *ngFor="let img of product.images; let i = index"
+          [src]="img" 
+          [alt]="product.name + ' - vue ' + (i + 1)"
+          [class.active]="selectedImageIndex === i"
+          (click)="selectImage(i)"
+        />
+      </div>
+    </div>
+
+    <!-- Informations produit -->
+    <div class="product-info">
+      <span class="eco-badge">
+        <img src="assets/icon2693-rgwu.svg" alt="Éco-responsable" /> 100% Recyclé
+      </span>
+      
+      <h1>{{ product.name }}</h1>
+      <p class="price">{{ product.price }}$</p>
+      
+      <p class="description">{{ product.longDescription }}</p>
+
+      <div class="details-section">
+        <h3>Caractéristiques</h3>
+        <ul class="features-list">
+          <li *ngFor="let feature of product.features">
+            <span class="check">✓</span> {{ feature }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="details-section">
+        <h3>Matériaux</h3>
+        <ul class="materials-list">
+          <li *ngFor="let material of product.materials">
+            <span class="leaf">🌿</span> {{ material }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="details-section">
+        <h3>Dimensions</h3>
+        <p class="dimensions">{{ product.dimensions }}</p>
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn primary">
+          <img src="assets/union75-qij.svg" alt="" /> Contactez-moi pour ce sac
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-left">
+    <img src="assets/rectangle13813-9fjo-200h.png" alt="Logo Miss Julie" />
+    <h3>Miss Julie</h3>
+    <p class="subtitle">et ses créations</p>
+    <p class="desc">
+      Créations uniques en produits recyclés. Fabriqué avec amour au Québec pour
+      un avenir plus durable.
+    </p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/groups/missjulieetsescreations/">F</a>
+      <a href="">I</a>
+      <a href="">M</a>
+    </div>
+  </div>
+
+  <div class="footer-right">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a routerLink="/">Accueil</a></li>
+      <li><a routerLink="/">Produits</a></li>
+      <li><a routerLink="/">À propos</a></li>
+      <li><a routerLink="/">Contact</a></li>
+    </ul>
+  </div>
+  <div class="copyright">
+    Miss Julie et ses créations. Tous droits réservés. ❤️
+  </div>
+</footer>
+
+
