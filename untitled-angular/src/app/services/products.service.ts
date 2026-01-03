@@ -26,7 +26,7 @@ export class ProductsService {
         Sa grande capacité vous permet de transporter tout ce dont vous avez besoin : ordinateur portable, documents, bouteille d'eau et plus encore.
         Les coutures renforcées garantissent une durabilité exceptionnelle, tandis que la doublure intérieure protège vos effets personnels.`,
       price: 45,
-      images: ['assets/sac.jpg', 'assets/sac.jpg', 'assets/sac.jpg'],
+      images: ['assets/IMG_sac_1.jpg', 'assets/IMG_sac_2.jpg', 'assets/IMG_sac_3.jpg'],
       features: ['Grande capacité', 'Poches intérieures', 'Fermeture éclair', 'Bandoulière ajustable'],
       materials: ['Tissus recyclés', 'Coton bio', 'Fermetures métalliques recyclées'],
       dimensions: '40cm x 35cm x 15cm'
@@ -40,7 +40,7 @@ export class ProductsService {
         Son design unique combine fonctionnalité et esthétique, avec des détails artisanaux qui la rendent vraiment spéciale.
         Légère et pratique, elle est idéale pour vos sorties en ville ou vos escapades du week-end.`,
       price: 55,
-      images: ['assets/sac.jpg', 'assets/sac.jpg', 'assets/sac.jpg'],
+      images: ['assets/IMG_sac_2.jpg', 'assets/IMG_sac_2.jpg', 'assets/IMG_sac_2.jpg'],
       features: ['Style unique', 'Bandoulière longue', 'Compartiment sécurisé', 'Finitions artisanales'],
       materials: ['Jeans recyclé', 'Cuir végétal', 'Fils de coton bio'],
       dimensions: '25cm x 20cm x 8cm'
